@@ -3,7 +3,7 @@ backend:
   branch: main
   site_domain: https://imaginative-monstera-a03b65.netlify.app/
 media_folder: "assets/uploads"
-public_folder: "assets/uploads"
+public_folder: "/assets/uploads"
 
 collections:
   - name: "notices"
