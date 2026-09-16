@@ -1,8 +1,9 @@
-backend:
-  name: git-gateway
-  branch: main # or master, depending on your branch name
 
-media_folder: "assets/uploads" # Where uploaded PDFs/images will be saved
+      backend:
+  name: git-gateway
+  branch: main # change to 'master' if your default branch is named master
+
+media_folder: "assets/uploads"
 public_folder: "assets/uploads"
 
 collections:
@@ -16,4 +17,5 @@ collections:
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "PDF Attachment / File", name: "file", widget: "file", required: false }
       - { label: "Notice Details", name: "body", widget: "markdown", required: false }
+      
       
