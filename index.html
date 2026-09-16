@@ -149,5 +149,52 @@
     });
   }
   </script>
+  <script>
+  async function loadNotices() {
+    const noticeList = document.getElementById('notice-list');
+    try {
+      // Fetch list of files in the _notices folder via GitHub API
+      const response = await fetch('https://api.github.com/repos/arunimavidyamandir/arunimavidyamandir.github.io/contents/_notices');
+      
+      if (!response.ok) {
+        noticeList.innerHTML = '<li>No notices published yet.</li>';
+        return;
+      }
+
+      const files = await response.json();
+      noticeList.innerHTML = ''; // Clear loading state
+
+      for (const file of files) {
+        if (file.name.endsWith('.md')) {
+          const fileRes = await fetch(file.download_url);
+          const text = await fileRes.text();
+          
+          // Parse title and date from frontmatter
+          const titleMatch = text.match(/title:\s*["']?(.*?)["']?\n/);
+          const dateMatch = text.match(/date:\s*["']?(.*?)["']?\n/);
+          const fileMatch = text.match(/file:\s*["']?(.*?)["']?\n/);
+
+          const title = titleMatch ? titleMatch[1] : file.name;
+          const rawDate = dateMatch ? dateMatch[1] : '';
+          const date = rawDate ? new Date(rawDate).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) : '';
+          const fileUrl = fileMatch ? fileMatch[1] : '#';
+
+          const li = document.createElement('li');
+          li.innerHTML = `
+            <span class="notice-date">${date}</span>
+            <a href="${fileUrl}" target="_blank">${title}</a>
+          `;
+          noticeList.appendChild(li);
+        }
+      }
+    } catch (error) {
+      console.error(error);
+      noticeList.innerHTML = '<li>Unable to load notices at this time.</li>';
+    }
+  }
+
+  loadNotices();
+  </script>
+  
   
 </body></html>
