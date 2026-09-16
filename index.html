@@ -177,7 +177,13 @@
           const title = titleMatch ? titleMatch[1] : file.name;
           const rawDate = dateMatch ? dateMatch[1] : '';
           const date = rawDate ? new Date(rawDate).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) : '';
-          const fileUrl = fileMatch ? fileMatch[1] : '#';
+          // Clean and format uploaded file link
+let fileUrl = fileMatch ? fileMatch[1].replace(/['"]/g, '').trim() : '#';
+
+// If path starts with asset directory, format it for public site
+if (fileUrl.startsWith('/assets/') || fileUrl.startsWith('assets/')) {
+  fileUrl = 'https://arunimavidyamandir.github.io/' + fileUrl.replace(/^\//, '');
+}
 
           const li = document.createElement('li');
           li.innerHTML = `
