@@ -1,26 +1,7 @@
-Arunima Vidya Mandir
+# Arunima Vidya Mandir Website
 
-Welcome to the digital repository of Arunima Vidya Mandir, Bheemdatta-2, Kanchanpur, Nepal.
+Responsive school website for Arunima Vidya Mandir, Bheemdatta-2, Kanchanpur, Nepal.
 
-About
+Official information included: JKG–8, established 2062 B.S., Principal Dipendra Prasad Bhatt, school phone 099421401, principal contact 9848879341, email arunimavidyamandir2062@gmail.com.
 
-This repository is intended to organize and preserve educational resources, projects, documents, and digital materials related to Arunima Vidya Mandir.
-
-Repository Contents
-
-- 📚 Educational materials
-- 📝 Classwork and worksheets
-- 💻 Computer and technology projects
-- 🎓 Academic resources
-- 📢 School notices and documents
-- 🌐 School website files
-- 📁 Other digital resources
-
-School
-
-Arunima Vidya Mandir
-Bheemdatta-2, Kanchanpur, Nepal
-
----
-
-This repository is maintained for educational and school-related purposes.
+Publish with GitHub Pages using `main` and `/(root)`.
