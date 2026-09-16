@@ -1,7 +1,7 @@
 backend:
   name: git-gateway
   branch: main
-
+  site_domain: https://imaginative-monstera-a03b65.netlify.app/
 media_folder: "assets/uploads"
 public_folder: "assets/uploads"
 
@@ -16,3 +16,4 @@ collections:
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "PDF Attachment / File", name: "file", widget: "file", required: false }
       - { label: "Notice Details", name: "body", widget: "markdown", required: false }
+      
