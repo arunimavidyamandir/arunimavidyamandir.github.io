@@ -107,7 +107,64 @@
       
     </div>
   </section>
+<!-- Admission Form Section -->
+<section id="admission" class="section-card">
+  <h2>Online Admission Form</h2>
+  <p class="form-subtitle">Please fill out the details below to apply for the upcoming academic session.</p>
+  
+  <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="admission-form">
+    <div class="form-grid">
+      <div class="form-group">
+        <label for="student-name">Student Full Name *</label>
+        <input type="text" id="student-name" name="Student Name" required placeholder="Enter student's full name">
+      </div>
 
+      <div class="form-group">
+        <label for="dob">Date of Birth *</label>
+        <input type="date" id="dob" name="Date of Birth" required>
+      </div>
+
+      <div class="form-group">
+        <label for="grade">Grade Applying For *</label>
+        <select id="grade" name="Grade Applying For" required>
+          <option value="" disabled selected>Select Grade</option>
+          <option value="Nursery / LKG / UKG">Nursery / LKG / UKG</option>
+          <option value="Primary (Class 1 - 5)">Primary (Class 1 - 5)</option>
+          <option value="Lower Secondary (Class 6 - 8)">Lower Secondary (Class 6 - 8)</option>
+          <option value="Secondary (Class 9 - 10)">Secondary (Class 9 - 10)</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="parent-name">Parent/Guardian Name *</label>
+        <input type="text" id="parent-name" name="Parent Name" required placeholder="Enter parent's full name">
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone Number *</label>
+        <input type="tel" id="phone" name="Phone Number" required placeholder="+977-98XXXXXXXX">
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="Email" placeholder="example@email.com">
+      </div>
+    </div>
+
+    <div class="form-group full-width">
+      <label for="address">Permanent Address *</label>
+      <input type="text" id="address" name="Address" required placeholder="City, District">
+    </div>
+
+    <div class="form-group full-width">
+      <label for="notes">Previous School / Additional Remarks</label>
+      <textarea id="notes" name="Additional Notes" rows="3" placeholder="Mention previous school attended or extra details..."></textarea>
+    </div>
+
+    <button type="submit" class="submit-btn">Submit Application</button>
+  </form>
+</section>
+  
 </main>
   <!-- Footer Section -->
 <footer id="contact" class="footer">
